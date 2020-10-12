@@ -55,7 +55,7 @@ Hello! my name *{}*.
 """.format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
 
 
-MEIKO_IMG = "https://telegra.ph/file/3640b99616bc0a8b56f08.jpg"
+MEIKO_IMG = "https://telegra.ph/file/40346a32b8288e4168ee6.jpg"
 
 DONATE_STRING = """No need to donate for hitomi"""
 
