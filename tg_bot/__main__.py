@@ -55,7 +55,7 @@ Hello! my name *{}*.
 """.format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
 
 
-MEIKO_IMG = "https://telegra.ph/file/40346a32b8288e4168ee6.jpg"
+MEIKO_IMG = "https://telegra.ph/file/48d2e685a74ffb2273397.jpg"
 
 DONATE_STRING = """No need to donate for hitomi"""
 
@@ -156,7 +156,7 @@ def start(bot: Bot, update: Update, args: List[str]):
                 parse_mode=ParseMode.MARKDOWN, reply_markup=buttons)
 
     else:
-        update.effective_message.reply_text("Heya! Am Awake 😊")
+        update.effective_message.reply_text("Heya! Am Awake 😁")
 
 
 def send_start(bot, update):
