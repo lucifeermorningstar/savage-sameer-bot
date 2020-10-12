@@ -27,10 +27,11 @@ from tg_bot.modules.helper_funcs.misc import paginate_modules
 
 PM_START_TEXT = """
 
+
 𝐈 𝐚𝐦 𝐚 𝐏𝐨𝐰𝐞𝐫𝐟𝐮𝐥 𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦 𝐆𝐫𝐨𝐮𝐩 𝐌𝐚𝐧𝐚𝐠𝐞𝐦𝐞𝐧𝐭 𝐛𝐨𝐭 𝐰𝐢𝐭𝐡 𝐒𝐨𝐦𝐞 𝐀𝐧𝐢𝐦𝐞 𝐅𝐮𝐧.
 𝐀𝐝𝐝 𝐦𝐞 𝐭𝐨 𝐲𝐨𝐮𝐫 𝐠𝐫𝐨𝐮𝐩 𝐟𝐨𝐫 𝐬𝐩𝐚𝐦 𝐟𝐫𝐞𝐞 𝐫𝐮𝐧𝐧𝐢𝐧𝐠.
 ================================
->> 𝐓𝐨 𝐬𝐞𝐞 𝐥𝐢𝐬𝐭 𝐨𝐟 𝐚𝐯𝐚𝐢𝐥𝐚𝐛𝐥𝐞 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐬 𝐡𝐢𝐭 /help.
+>> 𝐓𝐨 𝐬𝐞𝐞 𝐥𝐢𝐬𝐭 𝐨𝐟 𝐚𝐯𝐚𝐢𝐥𝐚𝐛𝐥𝐞 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐬 𝐡𝐢𝐭 /𝐡𝐞𝐥𝐩.
 ================================
 
 """
@@ -48,9 +49,16 @@ Hello! my name *{}*.
    - ❣in a group: will redirect you to pm, with all that chat's settings.
 
 
+
 {}
-And the following:
+*And* the following:
 """.format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
+
+
+MEIKO_IMG = "https://telegra.ph/file/3640b99616bc0a8b56f08.jpg"
+
+DONATE_STRING = """No need to donate for hitomi"""
+
 
 
 IMPORTED = {}
@@ -139,14 +147,16 @@ def start(bot: Bot, update: Update, args: List[str]):
 
         else:
             first_name = update.effective_user.first_name
-            update.effective_message.reply_text(
+            buttons = InlineKeyboardMarkup(
+         [[InlineKeyboardButton(text="Add Lilly To Your Group", url="https://t.me/hitomi_robot?startgroup=new")],
+         [InlineKeyboardButton(text="Support Group 👥", url="https://t.me/Dark_cobra_support")],
+         [InlineKeyboardButton(text="Help And Commands ❔", callback_data="help_back")]])
+            update.effective_message.reply_photo(MEIKO_IMG,
                 PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_ID),
-                parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="ADD ME TO YOUR GROUP",
-                                                                       url="t.me/{}?startgroup=true".format(bot.username))]]))
-
+                parse_mode=ParseMode.MARKDOWN, reply_markup=buttons)
 
     else:
-        update.effective_message.reply_text("I,am alive boss😎")
+        update.effective_message.reply_text("Heya! Am Awake 😊")
 
 
 def send_start(bot, update):
@@ -461,6 +471,28 @@ def migrate_chats(bot: Bot, update: Update):
     LOGGER.info("Successfully migrated!")
     raise DispatcherHandlerStop
 
+@run_async
+def donate(bot: Bot, update: Update):
+    user = update.effective_message.from_user
+    chat = update.effective_chat  # type: Optional[Chat]
+
+    if chat.type == "private":
+        keyboard = [[InlineKeyboardButton(text="Paytm",url="https://paytm.me/d-tXs3H"),InlineKeyboardButton(text="PayPal",url="http://Paypal.me/MrSammy07")]]
+        keyboard += [[InlineKeyboardButton(text="For Other modes",url="https://t.me/MrSemmy")]]
+        update.effective_message.reply_text(DONATE_STRING,  reply_markup=InlineKeyboardMarkup(keyboard),parse_mode=ParseMode.MARKDOWN)
+
+
+
+    else:
+        try:
+            bot.send_message(user.id, DONATE_STRING, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
+
+            update.effective_message.reply_text("I've PM'ed you about donating to my creator!")
+        except Unauthorized:
+            update.effective_message.reply_text("Contact me in PM first to get donation information.")
+
+
+    
 
 def main():
     test_handler = CommandHandler("test", test)
@@ -477,7 +509,7 @@ def main():
     settings_handler = CommandHandler("settings", get_settings)
     settings_callback_handler = CallbackQueryHandler(settings_button, pattern=r"stngs_")
 
-   
+    donate_handler = CommandHandler("donate", donate)
     migrate_handler = MessageHandler(Filters.status_update.migrate, migrate_chats)
 
     # dispatcher.add_handler(test_handler)
@@ -490,6 +522,7 @@ def main():
     dispatcher.add_handler(start_callback_handler)
     dispatcher.add_handler(IMDB_HANDLER)
     dispatcher.add_handler(IMDB_SEARCHDATA_HANDLER)
+    dispatcher.add_handler(donate_handler)
     # dispatcher.add_error_handler(error_callback)
 
     if WEBHOOK:
