@@ -148,7 +148,7 @@ def start(bot: Bot, update: Update, args: List[str]):
         else:
             first_name = update.effective_user.first_name
             buttons = InlineKeyboardMarkup(
-         [[InlineKeyboardButton(text="Add Lilly To Your Group", url="https://t.me/hitomi_robot?startgroup=new")],
+         [[InlineKeyboardButton(text="Add Hitomi To Your Group", url="https://t.me/hitomi_robot?startgroup=new")],
          [InlineKeyboardButton(text="Support Group 👥", url="https://t.me/Dark_cobra_support")],
          [InlineKeyboardButton(text="Help And Commands ❔", callback_data="help_back")]])
             update.effective_message.reply_photo(MEIKO_IMG,
