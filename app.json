@@ -33,7 +33,7 @@
       },      
       "OWNER_ID": {
          "description": "Your user ID as an integer.",
-         "value": "123"
+         "value": ""
       },
       "OWNER_USERNAME": {
          "description": "Your username",
@@ -46,7 +46,7 @@
       },
       "GBAN_LOGS": {
          "description": "Gban log channel, include the hyphen too: ex: -123456",
-         "value": "-123"
+         "value": ""
       },
       "CASH_API_KEY": {
          "description": "Required for currency converter",
@@ -76,17 +76,17 @@
       "SUDO_USERS": {
          "description": "A space separated list of user IDs who you want to assign as sudo users.",
          "required": false,
-         "value": "123"
+         "value": ""
       },
       "SUPPORT_USERS": {
          "description": "A space separated list of user IDs who you wanna assign as support users(gban perms only).",
          "required": false,
-         "value": "123"
+         "value": ""
       },
       "TIGER_USERS": {
          "description": "A space separated list of user IDs who you wanna assign as tiger users.",
          "required": false,
-         "value": "123"
+         "value": ""
       },
       "TOKEN": {
          "description": "Your bot token.",
@@ -106,7 +106,7 @@
       "WHITELIST_USERS": {
          "description": "A space separated list of user IDs who you want to assign as whitelisted - can't be banned with your bot.",
          "required": false,
-         "value": "123"
+         "value": "1l"
       }
    },
    "keywords": [
@@ -115,7 +115,7 @@
       "manager",
       "bot"
    ],
-   "logo": "https://telegra.ph/file/72b6a2032bd19642ff759.jpg",
-   "name": "phantom",
+   "logo": "",
+   "name": "hitomi",
    "repository": "https://github.com/leobrownlee/phantom"
 }
