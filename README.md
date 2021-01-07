@@ -6,6 +6,11 @@
 [![DEPLOY To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?button-url=https://github.com/THESANSKARILADKA/HitomiRobot)
 
 
+[![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/THESANSKARILADKA/HitomiRobot)
+
+
+
+
 
 ## Credits
 The bot is based on the original work done by [PaulSonOfLars](https://github.com/PaulSonOfLars)
