@@ -166,7 +166,7 @@ def start(bot: Bot, update: Update, args: List[str]):
                         InlineKeyboardButton(
                             text="☺Help👀",
                             url="https://t.me/?start=help")
-                    ]]))
+                    ]]
        
             update.effective_message.reply_photo(MEIKO_IMG,
                 PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_ID),
