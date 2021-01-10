@@ -27,12 +27,13 @@ from tg_bot.modules.helper_funcs.misc import paginate_modules
 
 PM_START_TEXT = """
 
+I am a sassy and efficient group management bot developed by [NOOB](Https://t.me//sanskarixd).
 
-𝐈 𝐚𝐦 𝐚 𝐏𝐨𝐰𝐞𝐫𝐟𝐮𝐥 𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦 𝐆𝐫𝐨𝐮𝐩 𝐌𝐚𝐧𝐚𝐠𝐞𝐦𝐞𝐧𝐭 𝐛𝐨𝐭 𝐰𝐢𝐭𝐡 𝐒𝐨𝐦𝐞 𝐀𝐧𝐢𝐦𝐞 𝐅𝐮𝐧.
-𝐀𝐝𝐝 𝐦𝐞 𝐭𝐨 𝐲𝐨𝐮𝐫 𝐠𝐫𝐨𝐮𝐩 𝐟𝐨𝐫 𝐬𝐩𝐚𝐦 𝐟𝐫𝐞𝐞 𝐫𝐮𝐧𝐧𝐢𝐧𝐠.
-================================
->> 𝐓𝐨 𝐬𝐞𝐞 𝐥𝐢𝐬𝐭 𝐨𝐟 𝐚𝐯𝐚𝐢𝐥𝐚𝐛𝐥𝐞 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐬 𝐡𝐢𝐭 /𝐡𝐞𝐥𝐩.
-================================
+🍁For help with bot commands and hit /help ⚡️
+
+🍁If you are lazy you can add me to your group for taking care of it ⚡️
+
+🍁 I am better than other group management bots⚡️
 
 """
 
