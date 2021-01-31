@@ -28,7 +28,7 @@ from tg_bot.modules.helper_funcs.misc import paginate_modules
 PM_START_TEXT = """
 
 
-𝐈 𝐚𝐦 𝐚 𝐏𝐨𝐰𝐞𝐫𝐟𝐮𝐥 𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦 𝐆𝐫𝐨𝐮𝐩 𝐌𝐚𝐧𝐚𝐠𝐞𝐦𝐞𝐧𝐭 𝐛𝐨𝐭 𝐰𝐢𝐭𝐡 𝐒𝐨𝐦𝐞 𝐀𝐧𝐢𝐦𝐞 𝐅𝐮𝐧.
+𝐈 𝐚𝐦 𝐚 𝐏𝐨𝐰𝐞𝐫𝐟𝐮𝐥 𝐒𝐚𝐯𝐚𝐠𝐞 𝐆𝐫𝐨𝐮𝐩 𝐌𝐚𝐧𝐚𝐠𝐞𝐦𝐞𝐧𝐭 𝐛𝐨𝐭 𝐰𝐢𝐭𝐡 𝐒𝐨𝐦𝐞 𝐀𝐧𝐢𝐦𝐞 𝐅𝐮𝐧.
 𝐀𝐝𝐝 𝐦𝐞 𝐭𝐨 𝐲𝐨𝐮𝐫 𝐠𝐫𝐨𝐮𝐩 𝐟𝐨𝐫 𝐬𝐩𝐚𝐦 𝐟𝐫𝐞𝐞 𝐫𝐮𝐧𝐧𝐢𝐧𝐠.
 ================================
 >> 𝐓𝐨 𝐬𝐞𝐞 𝐥𝐢𝐬𝐭 𝐨𝐟 𝐚𝐯𝐚𝐢𝐥𝐚𝐛𝐥𝐞 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐬 𝐡𝐢𝐭 /help.
@@ -148,8 +148,8 @@ def start(bot: Bot, update: Update, args: List[str]):
         else:
             first_name = update.effective_user.first_name
             buttons = InlineKeyboardMarkup(
-         [[InlineKeyboardButton(text="Add Hitomi To Your Group", url="https://t.me/hitomi_robot?startgroup=new")],
-         [InlineKeyboardButton(text="Support Group 👥", url="https://t.me/Dark_cobra_support")],
+         [[InlineKeyboardButton(text="Add This Bot To Your Group", url="https://t.me/devil_groupmanagerbot?startgroup=new")],
+         [InlineKeyboardButton(text="Support Group 👥", url="https://t.me/SAMEER_795")],
          [InlineKeyboardButton(text="Help And Commands ❔", callback_data="help_back")]])
             update.effective_message.reply_photo(MEIKO_IMG,
                 PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_ID),
