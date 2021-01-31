@@ -7,7 +7,7 @@
          "plan": "heroku-postgresql"
       }
    ],
-   "description": "Telegram group management bot.",
+   "description": "savage-management-bot.",
    "env": {
       "ALLOW_EXCL": {
          "description": "Set this to True if you want ! to be a command prefix along with /",
@@ -116,6 +116,5 @@
       "bot"
    ],
    "logo": "",
-   "name": "savage management bot",
-   "repository": "https://github.com/sameerpanthi/SAVAGE-SAMEER-BOT"
-}
+   "name": "hitomi",
+   "repository": "https://github.com/sameerpanthi/savage-management-bot
